@@ -23,9 +23,10 @@ const basedir = path.join(
     ".docker-credential-plaintext"
 );
 
-function getFilename(serverUrl) {
+function getFilePath(serverUrl) {
     sha1.update(serverUrl);
-    return sha1.digest("hex");
+    const filename = sha1.digest("hex");
+    return path.join(basedir, filename);
 }
 
 function storeCredentials(jsonText) {
@@ -50,7 +51,7 @@ function storeCredentials(jsonText) {
             fs.mkdirSync(basedir);
         }
 
-        const filePath = path.join(basedir, getFilename(serverUrl));
+        const filePath = getFilePath(serverUrl);
         fs.writeFileSync(filePath, JSON.stringify(json), { encoding: "utf-8" });
     }
     catch (err) {
@@ -59,7 +60,7 @@ function storeCredentials(jsonText) {
 }
 
 function getCredentials(serverUrl) {
-    const filePath = path.join(basedir, getFilename(serverUrl));
+    const filePath = getFilePath(serverUrl);
     if (fs.existsSync(filePath)) {
         const jsonText = fs.readFileSync(filePath, { encoding: "utf-8" });
         process.stdout.write(jsonText + "\n");
@@ -68,7 +69,7 @@ function getCredentials(serverUrl) {
 
 function eraseCredentials(serverUrl) {
     try {
-        const filePath = path.join(basedir, getFilename(serverUrl));
+        const filePath = getFilePath(serverUrl);
         if (!fs.existsSync(filePath)) {
             throw new Error(`File ${filePath} not found!`);
         }

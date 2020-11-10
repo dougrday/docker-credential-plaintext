@@ -34,7 +34,8 @@ function storeCredentials(jsonText) {
  WARNING! This credential helper stores credentials as plaintext!
 
  Do not use with long-lived access tokens or passwords!
- This helper should only be used with short-lived tokens (e.g. SSO)
+ This helper should only be considered when using short-lived
+ tokens (e.g. SSO). In all cases, use with caution!
 ====================================================================
 
 `);

@@ -15,6 +15,14 @@ A docker credential helper for plaintext storage of passwords. Use with caution.
     ```
 
     This only uses this authentication helper with that particular registry. This is important, so you don't save credentials in plaintext for everything - you only save plaintext credentials with short-lived tokens from specific repositories.
+1. Remove `auths` data for your registries in the `.docker/config.json` file:
+    These values may interfere with the authentication process. Remove them for the registries you added to `credHelpers`:
+    ```
+    "auths": {
+        // Delete the following value
+		"url.of.registry.i.want.to.authenticate.with": {}
+	},
+    ```
 
 # Why?
 

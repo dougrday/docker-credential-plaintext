@@ -7,21 +7,21 @@ A docker credential helper for plaintext storage of passwords. Use with caution.
 1. Add the folder to your system's PATH variable.
     > Don't forget to close and re-open your command line so the new PATH takes effect
 1. Update your Docker config, found at `%USERPROFILE%/.docker/config.json` in Windows, `~/.docker/config.json` in Linux kernels.
-1. Add a `credHelpers` section to that file for the registry you're authenticating with:
+1. Add a `credHelpers` section to that file for the repository you're authenticating with:
 
     ```
     "credHelpers": {
-        "url.of.registry.i.want.to.authenticate.with": "plaintext"
+        "url.of.repository.i.want.to.authenticate.with": "plaintext"
     }
     ```
 
-    This only uses this authentication helper with that particular registry. This is important, so you don't save credentials in plaintext for everything - you only save plaintext credentials with short-lived tokens from specific repositories.
+    This only uses this authentication helper with that particular repository. This is important, so you don't save credentials in plaintext for everything - you only save plaintext credentials with short-lived tokens from specific repositories.
 1. Remove `auths` data for your registries in the `.docker/config.json` file:
     These values may interfere with the authentication process. Remove them for the registries you added to `credHelpers`:
     ```
     "auths": {
         // Delete the following value
-		"url.of.registry.i.want.to.authenticate.with": {}
+		"url.of.repository.i.want.to.authenticate.with": {}
 	},
     ```
 

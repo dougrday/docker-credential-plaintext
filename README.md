@@ -22,8 +22,8 @@ A docker credential helper for plaintext storage of passwords. Use with caution.
     ```
     "auths": {
         // Delete the following value
-		"url.of.repository.i.want.to.authenticate.with": {}
-	},
+        "url.of.repository.i.want.to.authenticate.with": {}
+    },
     ```
 
 # Why?

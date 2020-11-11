@@ -4,7 +4,7 @@ A docker credential helper for plaintext storage of passwords. Use with caution.
 # Installation
 
 1. Clone the repository: `git clone https://github.com/dougrday/docker-credential-plaintext.git`
-1. Add the folder to your system's PATH environment variable.
+1. Add the directory you just cloned to your system's PATH environment variable.
     
     Don't forget to close and re-open your command line so the new PATH takes effect
 1. Update your Docker config, found at `%USERPROFILE%/.docker/config.json` in Windows, `~/.docker/config.json` in Linux kernels.

@@ -8,7 +8,7 @@ A docker credential helper for plaintext storage of passwords. Use with caution.
     
     Don't forget to close and re-open your command line so the new PATH takes effect
 1. Update your Docker config, found at `%USERPROFILE%/.docker/config.json` in Windows, `~/.docker/config.json` in Linux kernels:
-    * Add a `credHelpers` section to that file for the repository you're authenticating with:
+    * Add a `credHelpers` section at the root of the json for the repository you're authenticating with:
 
     ```
     "credHelpers": {

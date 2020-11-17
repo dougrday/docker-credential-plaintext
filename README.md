@@ -34,3 +34,7 @@ For Windows in particular, there are currently bugs around the Windows secure cr
 https://github.com/docker/docker-credential-helpers/issues/190
 
 This is a temporary workaround, and perhaps a learning tool, for handling Docker credentials.
+
+# A Final Warning
+
+Plaintext credential storage could expose your credentials to an attack if access to the machine is compromised. USE AT YOUR OWN RISK!

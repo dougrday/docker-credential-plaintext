@@ -37,4 +37,4 @@ This is a temporary workaround, and perhaps a learning tool, for handling Docker
 
 # A Final Warning
 
-Plaintext credential storage could expose your credentials to an attack if access to the machine is compromised. USE AT YOUR OWN RISK!
+Plaintext credential storage could expose your credentials to an attacker if access to the machine is compromised. USE AT YOUR OWN RISK!
